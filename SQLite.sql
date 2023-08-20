@@ -1,11 +1,11 @@
 -- CRUD --
---CREATE TABLE Persons (
+-- CREATE TABLE Persons (
 --    ID int NOT NULL,
 --    LastName varchar(255) NOT NULL,
 --    FirstName varchar(255),
 --    Age int,
 --    PRIMARY KEY (ID)
---);
+-- );
 --INSERT INTO Persons
 --VALUES (2, 'Jahanzeb', 'Alishba', 10);
 --UPDATE Persons
@@ -13,18 +13,42 @@
 --WHERE id=2;
 --DELETE FROM Persons WHERE id=2;
 --SELECT * FROM Persons;
---CREATE TABLE Courses (
+-- CREATE TABLE Courses (
 --    ID int NOT NULL,
 --    Name varchar(255) NOT NULL,
 --    Price int NOT NULL,
 --    PRIMARY KEY (ID)
---);
---CREATE TABLE RegisteredCourses (
+-- );
+-- CREATE TABLE RegisteredCourses (
 --    ID int NOT NULL,
 --    PersonID int NOT NULL,
 --    CourseID int NOT NULL,
 --    PRIMARY KEY (ID)
---);
-SELECT * FROM Persons;
-SELECT * from Courses;
-SELECT * FROM RegisteredCourses;
+-- );
+-- INSERT INTO Persons
+-- VALUES (1, 'Naeem', 'Jahanzeb', 30);
+-- INSERT INTO Persons
+-- VALUES (2, 'Jahanzeb', 'Alishba', 10);
+-- INSERT INTO Courses
+-- VALUES (1, 'Physics',30);
+-- INSERT INTO Courses
+-- VALUES (2, 'Chemistory', 10);
+-- INSERT INTO Courses
+-- VALUES (3, 'Biology',30);
+-- INSERT INTO RegisteredCourses
+-- VALUES (1, 1, 1);
+-- INSERT INTO RegisteredCourses
+-- VALUES (2, 1, 2);
+-- INSERT INTO RegisteredCourses
+-- VALUES (3, 1, 3);
+-- INSERT INTO RegisteredCourses
+-- VALUES (4, 2, 1);
+-- INSERT INTO RegisteredCourses
+-- VALUES (5, 2, 3);
+-- SELECT * FROM Persons;
+-- SELECT * from Courses;
+-- SELECT * FROM RegisteredCourses;
+
+SELECT Persons.FirstName, Persons.LastName, Courses.Name FROM Persons
+INNER JOIN RegisteredCourses ON Persons.ID = RegisteredCourses.PersonID
+INNER JOIN Courses ON RegisteredCourses.courseid = Courses.ID;
