@@ -8,7 +8,21 @@
   </head>
   <body>
     <h1>Welcome to the template for python app</h1>
-    <h2>{{ myMsg }}</h2>
-    <img src="{% static 'images/mypic.jpeg' %}" alt="Jahanzeb Image">
+
+    <div>
+        {% if topic_dict %}
+        <table>
+            <th>Topic Name</th>
+            {% for topic in topic_dict %}
+            <tr>
+                <td>{{ topic.top_name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No topic exist</p>
+        {% endif %}
+    </div>
+
   </body>
 </html>
